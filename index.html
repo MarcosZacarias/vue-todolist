@@ -49,6 +49,16 @@
           </button>
         </div>
 
+        <!-- Alert -->
+        <div
+          class="alert alert-danger"
+          role="alert"
+          :class="(!alert.alertOn)  ? `d-none` : ``"
+          :class="`alert`+alert.alertMode"
+        >
+          {{alert.alertText}}
+        </div>
+
         <!-- Container List -->
         <div class="container container-list">
           <!-- List -->
@@ -65,6 +75,7 @@
                 class="btn-close btn-task-close bg-danger"
                 data-bs-dismiss="alert"
                 aria-label="Close"
+                @click="eliminateTask(index)"
               ></button>
             </li>
           </ul>

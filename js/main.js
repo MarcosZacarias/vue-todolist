@@ -20,10 +20,23 @@ createApp({
   data() {
     return {
       toDoList,
+      alert: {
+        alertOn: false,
+        alertMode: "",
+        alertText: "",
+      },
     };
   },
 
-  methods: {},
+  methods: {
+    eliminateTask(index) {
+      this.alert.alertOn = true;
+      this.alert.alertMode = "danger";
+      this.alert.alertText =
+        "L'attivita `" + this.toDoList[index].text + "` è stata eliminata";
+      this.toDoList.splice(index, 1);
+    },
+  },
 
   created() {
     console.log(this.toDoList);
