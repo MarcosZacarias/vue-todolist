@@ -48,6 +48,7 @@
           <ul class="list-group">
             <li
               class="list-group-item clearfix"
+              :class="(toDoList[index].done) ? `text-decoration-line-through` : `` "
               v-for="(task, index) in toDoList"
             >
               {{toDoList[index].text}}

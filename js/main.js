@@ -23,6 +23,8 @@ createApp({
     };
   },
 
+  methods: {},
+
   created() {
     console.log(this.toDoList);
   },
