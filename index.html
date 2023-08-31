@@ -46,8 +46,11 @@
 
         <div class="container container-list">
           <ul class="list-group">
-            <li class="list-group-item clearfix">
-              {{message}}
+            <li
+              class="list-group-item clearfix"
+              v-for="(task, index) in toDoList"
+            >
+              {{toDoList[index].text}}
               <button
                 type="button"
                 class="btn-close btn-task-close"
