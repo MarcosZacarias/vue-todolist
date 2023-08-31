@@ -20,6 +20,7 @@ createApp({
   data() {
     return {
       toDoList,
+      newTaskText: "",
       alert: {
         alertOn: false,
         alertMode: "",
@@ -42,6 +43,15 @@ createApp({
       this.alert.alertOn = false;
       this.alert.alertColor = "";
       this.alert.alertText = "";
+    },
+
+    newTask() {
+      let newTask = {
+        text: this.newTaskText,
+        done: false,
+      };
+      this.toDoList.unshift(newTask);
+      this.newTaskText = "";
     },
   },
 

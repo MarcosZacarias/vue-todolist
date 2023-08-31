@@ -33,6 +33,7 @@
         <div class="input-group my-3">
           <!-- Text Add New Task -->
           <input
+            v-model="newTaskText"
             type="text"
             class="form-control"
             placeholder="Inserisci una nuova attività"
@@ -44,6 +45,7 @@
             class="btn btn-outline-primary"
             type="button"
             id="button-addon2"
+            @click="newTask()"
           >
             Aggiungi
           </button>
@@ -55,6 +57,7 @@
           :class="(alert.alertOn) ? alert.alertColor: `d-none` "
         >
           {{alert.alertText}}
+          <!-- BTN Close alert -->
           <button
             type="button"
             class="btn-close btn-close-right bg-danger"
