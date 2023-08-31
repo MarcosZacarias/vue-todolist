@@ -54,10 +54,10 @@
 
         <!-- Alert -->
         <div
-          class="alert"
+          class="alert d-flex justify-content-between"
           :class="(alert.alertOn) ? alert.alertColor: `d-none` "
         >
-          {{alert.alertText}}
+          <div class="w-100 flex-grow-1">{{alert.alertText}}</div>
           <!-- BTN Close alert -->
           <button
             type="button"
@@ -73,12 +73,16 @@
           <ul class="list-group">
             <!-- List Element -->
             <li
-              class="list-group-item clearfix"
-              :class="(toDoList[index].done) ? `text-decoration-line-through` : `` "
               v-for="(task, index) in toDoList"
-              @click="toDoList[index].done = !toDoList[index].done"
+              class="list-group-item d-flex justify-content-between"
             >
-              {{toDoList[index].text}}
+              <div
+                class="w-100 flex-grow-1"
+                :class="(toDoList[index].done) ? `text-decoration-line-through` : `` "
+                @click="toDoList[index].done = !toDoList[index].done;"
+              >
+                {{toDoList[index].text}}
+              </div>
               <button
                 type="button"
                 class="btn-close btn-close-right bg-danger"
