@@ -1,5 +1,6 @@
 const { createApp } = Vue;
 
+// | To Do List
 const toDoList = [
   {
     text: "Fare una lista",
@@ -18,7 +19,6 @@ const toDoList = [
 createApp({
   data() {
     return {
-      message: "Hello World",
       toDoList,
     };
   },

@@ -26,8 +26,12 @@
     <!-- DIV VUE.JS -->
     <div id="app">
       <div class="container">
+        <!-- Title -->
         <h1 class="text-center mt-2">Vue To Do List</h1>
+
+        <!-- Container Add New Task -->
         <div class="input-group my-3">
+          <!-- Text Add New Task -->
           <input
             type="text"
             class="form-control"
@@ -35,6 +39,7 @@
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
           />
+          <!-- BTN Add New Task -->
           <button
             class="btn btn-outline-primary"
             type="button"
@@ -44,8 +49,11 @@
           </button>
         </div>
 
+        <!-- Container List -->
         <div class="container container-list">
+          <!-- List -->
           <ul class="list-group">
+            <!-- List Element -->
             <li
               class="list-group-item clearfix"
               :class="(toDoList[index].done) ? `text-decoration-line-through` : `` "
@@ -54,7 +62,7 @@
               {{toDoList[index].text}}
               <button
                 type="button"
-                class="btn-close btn-task-close"
+                class="btn-close btn-task-close bg-danger"
                 data-bs-dismiss="alert"
                 aria-label="Close"
               ></button>
