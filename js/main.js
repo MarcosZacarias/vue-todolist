@@ -46,11 +46,37 @@ createApp({
     },
 
     newTask() {
-      let newTask = {
+      // Controls input text
+      if (this.newTaskText.length < 5) {
+        this.alert.alertOn = true;
+        this.alert.alertColor = "alert-warning";
+        this.alert.alertText = "Inserisci al meno 5 caratteri";
+        return;
+      }
+
+      if (this.newTaskText.length > 30) {
+        this.alert.alertOn = true;
+        this.alert.alertColor = "alert-warning";
+        this.alert.alertText = "Inserisci al massimo 30 caratteri";
+        return;
+      }
+
+      // Create new object
+      let newTaskObject = {
         text: this.newTaskText,
         done: false,
       };
-      this.toDoList.unshift(newTask);
+
+      // Add object in list
+      this.toDoList.unshift(newTaskObject);
+
+      // Print alert Succes
+      this.alert.alertOn = true;
+      this.alert.alertColor = "alert-success";
+      this.alert.alertText =
+        "L'attivita `" + newTaskObject.text + "` è stata aggiunta";
+
+      // Reset input
       this.newTaskText = "";
     },
   },
