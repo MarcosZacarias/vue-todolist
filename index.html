@@ -76,6 +76,7 @@
               class="list-group-item clearfix"
               :class="(toDoList[index].done) ? `text-decoration-line-through` : `` "
               v-for="(task, index) in toDoList"
+              @click="toDoList[index].done = !toDoList[index].done"
             >
               {{toDoList[index].text}}
               <button
