@@ -23,6 +23,7 @@ createApp({
       alert: {
         alertOn: false,
         alertMode: "",
+        alertColor: "",
         alertText: "",
       },
     };
@@ -31,10 +32,16 @@ createApp({
   methods: {
     eliminateTask(index) {
       this.alert.alertOn = true;
-      this.alert.alertMode = "danger";
+      this.alert.alertColor = "alert-danger";
       this.alert.alertText =
         "L'attivita `" + this.toDoList[index].text + "` è stata eliminata";
       this.toDoList.splice(index, 1);
+    },
+
+    closeAlert() {
+      this.alert.alertOn = false;
+      this.alert.alertColor = "";
+      this.alert.alertText = "";
     },
   },
 

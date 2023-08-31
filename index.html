@@ -51,12 +51,16 @@
 
         <!-- Alert -->
         <div
-          class="alert alert-danger"
-          role="alert"
-          :class="(!alert.alertOn)  ? `d-none` : ``"
-          :class="`alert`+alert.alertMode"
+          class="alert"
+          :class="(alert.alertOn) ? alert.alertColor: `d-none` "
         >
           {{alert.alertText}}
+          <button
+            type="button"
+            class="btn-close btn-close-right bg-danger"
+            aria-label="Close"
+            @click="closeAlert()"
+          ></button>
         </div>
 
         <!-- Container List -->
@@ -72,7 +76,7 @@
               {{toDoList[index].text}}
               <button
                 type="button"
-                class="btn-close btn-task-close bg-danger"
+                class="btn-close btn-close-right bg-danger"
                 data-bs-dismiss="alert"
                 aria-label="Close"
                 @click="eliminateTask(index)"
