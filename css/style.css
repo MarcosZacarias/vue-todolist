@@ -1,0 +1,13 @@
+body {
+  background-color: #efebff;
+}
+
+.btn-task-close {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

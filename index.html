@@ -24,7 +24,41 @@
   </head>
   <body>
     <!-- DIV VUE.JS -->
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <div class="container">
+        <h1 class="text-center mt-2">Vue To Do List</h1>
+        <div class="input-group my-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Inserisci una nuova attività"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            id="button-addon2"
+          >
+            Aggiungi
+          </button>
+        </div>
+
+        <div class="container container-list">
+          <ul class="list-group">
+            <li class="list-group-item clearfix">
+              {{message}}
+              <button
+                type="button"
+                class="btn-close btn-task-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- SCRIPT BOOTSTRAP JAVASCRIPT -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
